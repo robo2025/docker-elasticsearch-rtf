@@ -5,6 +5,7 @@ ENV ES_VERSION="5.0.0"
 
 # es需要使用非root用户启动
 # es5之后的版本需要修改/etc/sysctl.conf 手动加上vm.max_map_count=262144否则报错
+# 更好的解决办法 可以修改宿主的  该配置项  sudo sysctl -w vm.max_map_count=655360
 
 
 RUN cd /tmp && curl -OL https://github.com/medcl/elasticsearch-rtf/archive/${ES_VERSION}.zip && \
@@ -29,4 +30,4 @@ USER es
 
 EXPOSE 9200 9300
 
-CMD ["elasticsearch", "--network.host", "_non_loopback_"]
+CMD ["elasticsearch"]
