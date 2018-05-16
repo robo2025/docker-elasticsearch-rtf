@@ -1,7 +1,7 @@
 FROM java:8-jre
 MAINTAINER yechen <897958480@qq.com>
 
-ENV ES_VERSION="2.2.1"
+ENV ES_VERSION="5.0.0"
 
 # es needs non-root user to start
 
