@@ -3,7 +3,10 @@ MAINTAINER yechen <897958480@qq.com>
 
 ENV ES_VERSION="5.0.0"
 
-# es needs non-root user to start
+# es需要使用非root用户启动
+# es5之后的版本需要修改/etc/sysctl.conf 手动加上vm.max_map_count=262144否则报错
+
+RUN echo "vm.max_map_count=262144" >>/etc/sysctl.conf
 
 RUN cd /tmp && curl -OL https://github.com/medcl/elasticsearch-rtf/archive/${ES_VERSION}.zip && \
   unzip ${ES_VERSION}.zip -d /usr/share && rm /tmp/${ES_VERSION}.zip && \
