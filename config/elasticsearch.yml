@@ -94,3 +94,10 @@ http.cors.allow-origin: "*"
 #http.cors.allow-origin: /.*/ 
 http.cors.allow-methods: OPTIONS, HEAD, GET, POST, PUT, DELETE
 http.cors.allow-headers: "X-Requested-With, Content-Type, Content-Length, X-User"
+http.basic.enabled: true
+http.basic.user: "robo2025"
+http.basic.password: "robo@2025.com"
+http.basic.ipwhitelist: ["localhost", "127.0.0.1", "192.144.141.182", "123.207.174.228", "123.207.174.228", "123.207.174.228", "113.246.204.101"]
+http.basic.trusted_proxy_chains: []
+http.basic.log: false
+http.basic.xforward: ""
