@@ -15,7 +15,7 @@ RUN cd /tmp && curl -OL https://github.com/medcl/elasticsearch-rtf/archive/${ES_
 	for path in data config logs config/scripts; do mkdir -p "/usr/share/elasticsearch/$path"; done && \
 	chown -R es:es /usr/share/elasticsearch && \
 	cd /usr/share/elasticsearch/bin && \
-	sh -c 'bin/echo -e "y\n" | ./elasticsearch-plugin install x-pack' && \
+	sh -c 'bin/echo -e "y\n" | sh elasticsearch-plugin install x-pack' && \
 	sed -ri 's/^index.analysis.analyzer.default.type: keyword/#index.analysis.analyzer.default.type: keyword/;s/^#index.analysis.analyzer.default.type: mmseg/index.analysis.analyzer.default.type: mmseg/' /usr/share/elasticsearch/config/elasticsearch.yml
 
 COPY ./config /usr/share/elasticsearch/config
